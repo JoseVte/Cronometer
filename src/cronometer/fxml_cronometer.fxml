@@ -14,5 +14,5 @@
     <Button fx:id="start" text="Start cronometer" GridPane.columnIndex="0" GridPane.rowIndex="0" onAction="#action" />
     <Button fx:id="stop" text="Stop cronometer"  GridPane.columnIndex="0" GridPane.rowIndex="1" onAction="#action" />
     <Button fx:id="reset" text="Reset cronometer"  GridPane.columnIndex="0" GridPane.rowIndex="2" onAction="#action" />
-    <Text fx:id="time" GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.rowSpan="3" GridPane.halignment="RIGHT" text="00:00:00" />         
+    <Text fx:id="time" GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.rowSpan="3" GridPane.halignment="RIGHT" />         
 </GridPane>

@@ -6,10 +6,13 @@
 package cronometer;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
+import util.ThreadUtilities;
 
 /**
  *
@@ -25,6 +28,12 @@ public class FXMLCronometer extends Application {
         stage.setTitle("Cronometer");
         stage.setScene(scene);
         stage.show();
+        stage.setOnCloseRequest((WindowEvent event) -> {
+            Thread timer = ThreadUtilities.getThread("timer");
+            if (timer != null) {
+                timer.interrupt();
+            }
+        });
     }
 
     /**
