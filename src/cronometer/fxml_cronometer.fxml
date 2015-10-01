@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="cronometer.FXMLCronometerController"
+    alignment="CENTER_LEFT" hgap="10" vgap="10">
+    <padding><javafx.geometry.Insets top="25" right="25" bottom="10" left="25" /></padding>
+    <Button fx:id="start" text="Start cronometer" GridPane.columnIndex="0" GridPane.rowIndex="0" onAction="#action" />
+    <Button fx:id="stop" text="Stop cronometer"  GridPane.columnIndex="0" GridPane.rowIndex="1" onAction="#action" />
+    <Button fx:id="reset" text="Reset cronometer"  GridPane.columnIndex="0" GridPane.rowIndex="2" onAction="#action" />
+    <Text fx:id="time" GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.rowSpan="3" GridPane.halignment="RIGHT" text="00:00:00" />         
+</GridPane>
