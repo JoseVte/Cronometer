@@ -10,21 +10,26 @@ __date__ = "$02-oct-2015 1:02:38$"
 
 from gi.repository import Gtk
 
-class cronometerWindow(Gtk.Window):
-    def __init__(self):
-        Gtk.Window.__init__(self, title = "Cronometer")
-        Gtk.Window.set_default_size(self, 400, 275)
-        Gtk.Window.set_position(self, Gtk.WindowPosition.CENTER)
-        
-        buttonStart = Gtk.Button("Start")
-        buttonStart.connect("clicked", self.action)
-        
-        self.add(buttonStart)
-    
-    def action(self, button):
-        print button
-        
-window = cronometerWindow()
+class Handler(Gtk.Window):
+    def action_clicked(self, button):
+        time = builder.get_object("time")
+        time.set_text(button.get_label())
+
+builder = Gtk.Builder()
+builder.add_from_file("views/main.glade")
+builder.connect_signals(Handler())
+
+startButton = builder.get_object("buttonStart")
+startButton.set_label("Start")
+
+stopButton = builder.get_object("buttonStop")
+stopButton.set_label("Stop")
+
+resetButton = builder.get_object("buttonReset")
+resetButton.set_label("Reset")
+
+window = builder.get_object("window")
+
 window.connect("delete-event", Gtk.main_quit)
 window.show_all()
 Gtk.main()
